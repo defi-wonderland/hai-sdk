@@ -20,7 +20,7 @@ export class ContractApis {
     public stabilityFeeTreasury: types.IStabilityFeeTreasury
     public safeManager: types.IHaiSafeManager
     public joinCoin: types.ICoinJoin
-    public proxyFactory: types.IHaiProxyRegistry
+    public proxyFactory: types.IHaiProxyFactory
     public rateSetter: types.IPIDRateSetter
     public piCalculator: types.IPIDController
 
@@ -65,8 +65,7 @@ export class ContractApis {
         this.liquidationJob = types.ILiquidationJob__factory.connect(addressList.JOB_LIQUIDATION, signerOrProvider)
 
         this.safeManager = types.IHaiSafeManager__factory.connect(addressList.SAFE_MANAGER, signerOrProvider)
-        // TODO: change for HaiProxyFactory after new ABIs are available
-        this.proxyFactory = types.IHaiProxyRegistry__factory.connect(addressList.PROXY_FACTORY, signerOrProvider)
+        this.proxyFactory = types.IHaiProxyFactory__factory.connect(addressList.PROXY_FACTORY, signerOrProvider)
         
         this.weth = types.WETH9__factory.connect(addressList.ETH, signerOrProvider)
 
